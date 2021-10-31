@@ -73,7 +73,7 @@ function gamePlay(){
             player.y +=player.speed;
         if(keys.ArrowLeft && player.x>0)
             player.x -=player.speed;
-        if(keys.ArrowRight && player.x <(road.width -55))
+        if(keys.ArrowRight && player.x <(road.width -75))
             player.x +=player.speed;
         
         ball.style.top = player.y + "px";
