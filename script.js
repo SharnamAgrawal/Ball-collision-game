@@ -58,8 +58,8 @@ function moveEnemy(ball){
         if(Collide(ball,moveEnemyBall[j])){
             endGame();
         }
-        if(moveEnemyBall[j].y >= 650){
-            moveEnemyBall[j].y = -250;
+        if(moveEnemyBall[j].y >= 850){
+            moveEnemyBall[j].y = -200;
             moveEnemyBall[j].style.left = Math.floor(Math.random()*445) + "px";
         }
         moveEnemyBall[j].y +=player.speed;
@@ -78,7 +78,7 @@ function gamePlay(){
 
         if(keys.ArrowUp && player.y> (road.top + 150))
             player.y -= player.speed;
-        if(keys.ArrowDown && player.y<(road.bottom-130))
+        if(keys.ArrowDown && player.y<(road.bottom-180))
             player.y +=player.speed;
         if(keys.ArrowLeft && player.x>0)
             player.x -=player.speed;
