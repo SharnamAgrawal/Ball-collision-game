@@ -12,8 +12,16 @@ let keys = {
     ArrowRight:false,
 }
 
+setInterval(()=>{
+    if(player.speed>=15)
+    player.speed=15;
+    else
+    player.speed++;
+},5000);
+
+
 let player = {
-    speed: 10,
+    speed: 6,
     score:0
 };
 
@@ -36,6 +44,7 @@ function Collide(a,b){
 }
 
 function endGame(){
+    player.speed = 6;
     player.start = false;
     details.classList.remove("hide");
     details.innerHTML = "Game over <br/> Your final score is " + player.score + "<br/>Press here to restart again";
@@ -69,11 +78,11 @@ function gamePlay(){
 
         if(keys.ArrowUp && player.y> (road.top + 150))
             player.y -= player.speed;
-        if(keys.ArrowDown && player.y<(road.bottom-70))
+        if(keys.ArrowDown && player.y<(road.bottom-130))
             player.y +=player.speed;
         if(keys.ArrowLeft && player.x>0)
             player.x -=player.speed;
-        if(keys.ArrowRight && player.x <(road.width -75))
+        if(keys.ArrowRight && player.x <(road.width -70))
             player.x +=player.speed;
         
         ball.style.top = player.y + "px";
